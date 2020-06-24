@@ -1,1 +1,3 @@
-# Jarvis
+# Collect a lot of small project in python
+
+Contain AI, GUI, CLI and others...
