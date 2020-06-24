@@ -1,3 +1,6 @@
-# Collect a lot of small project in python
+# Collect interesting project in python
 
-Contain AI, GUI, CLI and others...
+- Color detection with CV
+- Face detection with CV
+- FileExplorer by os, sys, platform ... (Usable on any platform)
+- Soap usable on any pc with python and pip (Install every needs)
