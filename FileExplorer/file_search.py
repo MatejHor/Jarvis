@@ -62,7 +62,7 @@ try:
         file_ = file_ + "*"
     if args.start_regex:
         file_ = "*" + file_
-    print(file_)
+    print('Searching ->', file_)
     search(file_)
 except Exception as e:
     print('file_search: ' + str(e))
