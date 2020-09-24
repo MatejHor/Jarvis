@@ -131,4 +131,8 @@ dmypy.json
 # IDE
 .idea/
 /GenderDetection/dataset/
+
+# Files
 *.jpg
+*.mp4
+*.h5
