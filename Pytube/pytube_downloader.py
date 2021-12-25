@@ -3,7 +3,7 @@ from pytube import YouTube
 import pprint
 
 link = input('Insert link: ')
-video = YouTube(link or 'https://www.youtube.com/watch?v=9ao4FEaDGhQ&list=RD9ao4FEaDGhQ&start_radio=1')
+video = YouTube(link or 'https://www.youtube.com/watch?v=oXgtGQq-3V0')
 
 for stream in video.streams:
     print(stream)
