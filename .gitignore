@@ -139,3 +139,4 @@ dmypy.json
 *.mp3
 Pytube/titulky_en.txt
 Pytube/titulky_sk.txt
+*.exe

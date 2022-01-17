@@ -1,7 +1,5 @@
 from pytube import YouTube
 
-import pprint
-
 link = input('Insert link: ')
 video = YouTube(link or 'https://www.youtube.com/watch?v=oXgtGQq-3V0')
 
@@ -16,4 +14,4 @@ tag = input('Write tag to download ')
 
 ys = video.streams.get_by_itag(int(tag))
 
-ys.download()
+ys.download("./video")
