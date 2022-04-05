@@ -22,25 +22,22 @@ def open_file(path):
 
 
 parser = argparse.ArgumentParser(description='Python os manager')
-parser.add_argument('-i', '--input', dest='input',
-                    type=str, help='Searching file, word')
-parser.add_argument('-p', '--path', dest='path', help='Path for searching')
-parser.add_argument('-o', '--open', action='store_true',
-                    help='Open file after search')
+parser.add_argument('input', nargs=1, type=str, help='Searching file, word')
+parser.add_argument('-p', '--path', nargs='*', dest='path', help='Path for searching')
+parser.add_argument('-o', '--open', action='store_true',help='Open file after search')
 args = parser.parse_args()
 
 result = []
-if args.path:
-    result = find(args.input, args.path)
-else:
+if not args.path:
     if platform.system() == "Windows":
-        disks = " ".join(re.sub('Caption|\n|\r', '', os.popen(
-            "wmic logicaldisk get caption").read()).split()).split()
-        for disk in disks:
-            result += find(args.input, disk + '\\')
+        windows_disks = "wmic logicaldisk get caption"
+        args.path = " ".join(re.sub('Caption|\n|\r', '', os.popen(
+            windows_disks).read()).split()).split()
+        args.path = [path + '\\' for path in args.path]
     else:
-        result = find(args.input, path='/')
-# print(result)
+        args.path = ['/']
+print(f'[+] Searching file {args.input[0]} in path\s {args.path}')
+result = [find(args.input[0], path) for path in args.path]
 if args.open:
     for file in result:
         open_file(file)
