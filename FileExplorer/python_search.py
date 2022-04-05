@@ -36,7 +36,7 @@ if not args.path:
         args.path = [path + '\\' for path in args.path]
     else:
         args.path = ['/']
-print(f'[+] Searching file {args.input[0]} in path\s {args.path}')
+print("[+] Searching file", args.input[0], "in path\s", args.path)
 result = [find(args.input[0], path) for path in args.path]
 if args.open:
     for file in result:
