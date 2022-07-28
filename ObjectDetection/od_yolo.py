@@ -120,7 +120,11 @@ class ObjectDetection:
             if self.output: output.write(frame)
 
             # End video window
-            cv2.imshow('frame', frame)
+            cv2.imshow('CameraVideo', frame)
+            if self.exit == 'x':
+                if cv2.waitKey(1):
+                    if cv2.getWindowProperty('CameraVideo', cv2.WND_PROP_VISIBLE) < 1:
+                        break
             if cv2.waitKey(1) & 0xFF == ord(self.exit):
                 break
 
