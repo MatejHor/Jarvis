@@ -10,7 +10,6 @@ def parse_elements(elements):
             all_elements[name]['data_type'] = parse_elements(element.type.elements)
         else:
             all_elements[name]['data_type'] = str(element.type)
-
     return all_elements
 
 
@@ -95,6 +94,8 @@ try:
     method = list(methods.keys())[method_index]
 except:
     method = list(methods.keys())[0] if method == "" else method
+
+print(f'method {method}')
 
 for param in params.keys():
     if 'Double' in methods[method][param]['data_type']:
